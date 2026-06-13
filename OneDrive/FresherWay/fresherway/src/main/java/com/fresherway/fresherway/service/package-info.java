@@ -1,1 +1,0 @@
-package com.fresherway.fresherway.service;
