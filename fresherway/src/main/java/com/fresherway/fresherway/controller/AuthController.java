@@ -1,0 +1,27 @@
+package com.fresherway.fresherway.controller;
+
+	import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Autowired;
+	import org.springframework.web.bind.annotation.*;
+
+	import com.fresherway.fresherway.dto.RegisterRequest;
+	import com.fresherway.fresherway.service.AuthService;
+
+import jakarta.validation.Valid;
+
+	@RestController
+	@RequestMapping("/api/auth")
+	public class AuthController {
+        
+	    @Autowired
+	    private AuthService authService;
+	   
+
+	    @PostMapping("/register")
+	    public Map<String, String> register(@Valid @RequestBody RegisterRequest request) {
+
+	        return authService.register(request);
+	    }
+	}
+
