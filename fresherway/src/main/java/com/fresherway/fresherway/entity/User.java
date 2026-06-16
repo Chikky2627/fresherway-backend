@@ -54,6 +54,13 @@ import jakarta.persistence.Table;
 	    public void setVerified(Boolean verified) {
 	        this.verified = verified;
 	    }
+		public Long getId() {
+    return id;
+}
+
+public void setId(Long id) {
+    this.id = id;
+}
 	   
 	}
 

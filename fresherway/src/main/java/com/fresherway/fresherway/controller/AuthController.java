@@ -1,8 +1,6 @@
 package com.fresherway.fresherway.controller;
 
 	import java.util.Map;
-
-import org.springframework.beans.factory.annotation.Autowired;
 	import org.springframework.web.bind.annotation.*;
 
 	import com.fresherway.fresherway.dto.RegisterRequest;
@@ -14,8 +12,12 @@ import jakarta.validation.Valid;
 	@RequestMapping("/api/auth")
 	public class AuthController {
         
-	    @Autowired
-	    private AuthService authService;
+	    private final AuthService authService;
+
+
+		AuthController(AuthService authService) {
+			this.authService = authService;
+		}
 	   
 
 	    @PostMapping("/register")
@@ -23,5 +25,9 @@ import jakarta.validation.Valid;
 
 	        return authService.register(request);
 	    }
+		@GetMapping("/verify")
+public String verify(@RequestParam String token) {
+    return authService.verifyAccount(token);
+}
 	}
 
