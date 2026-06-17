@@ -3,7 +3,8 @@ package com.fresherway.fresherway.controller;
 	import java.util.Map;
 	import org.springframework.web.bind.annotation.*;
 
-	import com.fresherway.fresherway.dto.RegisterRequest;
+import com.fresherway.fresherway.dto.LoginRequest;
+import com.fresherway.fresherway.dto.RegisterRequest;
 	import com.fresherway.fresherway.service.AuthService;
 
 import jakarta.validation.Valid;
@@ -26,8 +27,13 @@ import jakarta.validation.Valid;
 	        return authService.register(request);
 	    }
 		@GetMapping("/verify")
-public String verify(@RequestParam String token) {
-    return authService.verifyAccount(token);
-}
+          public String verify(@RequestParam String token) {
+          return authService.verifyAccount(token);
+        }
+        @PostMapping("/login")
+          public Map<String,String> login(
+        @RequestBody LoginRequest request){
+          return authService.login(request);
+         }
 	}
 
