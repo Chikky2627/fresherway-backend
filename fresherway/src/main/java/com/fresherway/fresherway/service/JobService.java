@@ -40,4 +40,27 @@ public class JobService {
     public Job getJobById(Long id) {
         return jobRepository.findById(id).orElse(null);
     }
+    public List<Job> searchBySkill(String skill) {
+    return jobRepository
+            .findBySkillsRequiredContaining(skill);
+}
+
+public List<Job> searchByLocation(String location) {
+    return jobRepository
+            .findByLocationContaining(location);
+}
+
+public List<Job> searchByCompany(String company) {
+    return jobRepository
+            .findByCompanyNameContaining(company);
+}
+public List<Job> searchBySkillAndLocation(
+        String skill,
+        String location) {
+
+    return jobRepository
+            .findBySkillsRequiredContainingAndLocationContaining(
+                    skill,
+                    location);
+}
 }

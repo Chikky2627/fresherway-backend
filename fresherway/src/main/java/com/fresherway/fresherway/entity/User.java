@@ -1,11 +1,14 @@
 package com.fresherway.fresherway.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+
 
 @Entity
 	@Table(name = "users")
@@ -19,7 +22,7 @@ import jakarta.persistence.Table;
 
 	    @Column(unique = true)
 	    private String email;
-
+        @JsonIgnore
 	    private String password;
 
 	    private Boolean verified;
@@ -61,6 +64,7 @@ import jakarta.persistence.Table;
 public void setId(Long id) {
     this.id = id;
 }
+
 	   
 	}
 
