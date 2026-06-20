@@ -17,6 +17,7 @@ public class StudentProfile {
     private String branch;
 
     private Double cgpa;
+    private String resumeFileName;
 
     public Long getId() {
         return id;
@@ -77,4 +78,13 @@ public class StudentProfile {
     public void setResumeUrl(String resumeUrl) {
         this.resumeUrl = resumeUrl;
     }
+
+    public String getResumeFileName() {
+        return resumeFileName;
+    }
+
+    public void setResumeFileName(String resumeFileName) {
+        this.resumeFileName = resumeFileName;
+    }
+
 }
