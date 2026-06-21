@@ -9,6 +9,13 @@ public class RegisterRequest {
 	    private String email;
 	   @NotBlank
 	    private String password;
+		public String getRole() {
+		return role;
+	}
+	   public void setRole(String role) {
+		   this.role = role;
+	   }
+		private String role;
         public void setName(String name) {
         	this.name=name;
         }

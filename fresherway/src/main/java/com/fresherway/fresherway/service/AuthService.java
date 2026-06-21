@@ -22,12 +22,15 @@ import com.fresherway.fresherway.repository.VerificationTokenRepository;
 
 	    private final UserRepository userRepository;
 		private final VerificationTokenRepository tokenRepository;
+        private final JwtService jwtService;
 
-		AuthService(UserRepository userRepository, VerificationTokenRepository tokenRepository, EmailService emailService, PasswordEncoder passwordEncoder) {
+		AuthService(UserRepository userRepository, VerificationTokenRepository tokenRepository, EmailService emailService, PasswordEncoder passwordEncoder, JwtService jwtService) {
 			this.userRepository = userRepository;
 			this.tokenRepository = tokenRepository;
 			this.emailService = emailService;
 			this.passwordEncoder = passwordEncoder;
+            this.jwtService = jwtService;
+            
 		}
 
 	    public Map<String, String> register(RegisterRequest request) {
@@ -49,6 +52,7 @@ import com.fresherway.fresherway.repository.VerificationTokenRepository;
                 request.getPassword()
                  )
             );
+            user.setRole(request.getRole());
 	        user.setVerified(false);
 
 	        userRepository.save(user);
@@ -126,9 +130,19 @@ public Map<String,String> login(LoginRequest request){
         return response;
     }
 
-    response.put("message","Login Successful");
+    String token =
+        jwtService.generateToken(
+                user.getEmail(),user.getRole());
+
+response.put("message",
+        "Login Successful");
+
+response.put("token",
+        token);
 
     return response;
 }
+
 	}
+
 

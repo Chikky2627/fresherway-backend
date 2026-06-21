@@ -39,4 +39,8 @@ public class AdminController {
     public Map<String, Long> getStats() {
         return adminService.getStats();
     }
+    @GetMapping("/hello")
+public String adminTest() {
+    return "Admin Access Success";
+}
 }
