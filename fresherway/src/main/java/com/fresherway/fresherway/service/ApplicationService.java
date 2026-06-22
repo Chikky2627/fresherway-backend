@@ -38,4 +38,23 @@ public class ApplicationService {
 
         return applicationRepository.findByUserId(userId);
     }
+    public String updateStatus(
+        Long applicationId,
+        String status) {
+
+    JobApplication application =
+            applicationRepository
+                    .findById(applicationId)
+                    .orElse(null);
+
+    if (application == null) {
+        return "Application Not Found";
+    }
+
+    application.setStatus(status);
+
+    applicationRepository.save(application);
+
+    return "Status Updated Successfully";
+}
 }

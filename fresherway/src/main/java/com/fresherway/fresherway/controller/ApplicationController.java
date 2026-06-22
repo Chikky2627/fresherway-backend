@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.web.bind.annotation.*;
 
 import com.fresherway.fresherway.dto.ApplicationRequest;
+import com.fresherway.fresherway.dto.ApplicationStatus;
 import com.fresherway.fresherway.entity.JobApplication;
 import com.fresherway.fresherway.service.ApplicationService;
 
@@ -33,4 +34,13 @@ public class ApplicationController {
 
         return applicationService.getApplications(userId);
     }
+    @PutMapping("/status")
+public String updateStatus(
+        @RequestBody
+        ApplicationStatus request) {
+
+    return applicationService.updateStatus(
+            request.getApplicationId(),
+            request.getStatus());
+}
 }
