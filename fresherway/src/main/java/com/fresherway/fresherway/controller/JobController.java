@@ -8,6 +8,8 @@ import com.fresherway.fresherway.dto.JobRequest;
 import com.fresherway.fresherway.entity.Job;
 import com.fresherway.fresherway.service.JobService;
 
+import jakarta.validation.Valid;
+
 @RestController
 @RequestMapping("/api/jobs")
 public class JobController {
@@ -20,6 +22,7 @@ public class JobController {
 
     @PostMapping
     public String createJob(
+        @Valid
             @RequestBody JobRequest request) {
 
         return jobService.createJob(request);

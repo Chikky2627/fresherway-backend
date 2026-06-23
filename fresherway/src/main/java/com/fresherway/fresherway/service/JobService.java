@@ -6,7 +6,9 @@ import org.springframework.stereotype.Service;
 
 import com.fresherway.fresherway.dto.JobRequest;
 import com.fresherway.fresherway.entity.Job;
+import com.fresherway.fresherway.exception.ResourceNotFoundException;
 import com.fresherway.fresherway.repository.JobRepository;
+
 
 @Service
 public class JobService {
@@ -37,9 +39,14 @@ public class JobService {
         return jobRepository.findAll();
     }
 
-    public Job getJobById(Long id) {
-        return jobRepository.findById(id).orElse(null);
-    }
+   public Job getJobById(Long id) {
+
+    return jobRepository
+            .findById(id)
+            .orElseThrow(() ->
+                    new ResourceNotFoundException(
+                            "Job Not Found With Id: " + id));
+}
     public List<Job> searchBySkill(String skill) {
     return jobRepository
             .findBySkillsRequiredContaining(skill);
