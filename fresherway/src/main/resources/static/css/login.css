@@ -1,0 +1,26 @@
+.email{
+    background-color: #f1f1f1;
+     height: 30px;
+    width: 150px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.password{
+    background-color: #f1f1f1;
+    height: 30px;
+    width: 150px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    top: 120%;
+    display: flex;
+}
+.container{
+    top: 10px;
+    left: 100px;
+    display: inline-block;
+    height: 500px;
+    width: 40%;
+    background-color: #a68cd6;
+    align-items: center;
+    justify-content: center;
+}
