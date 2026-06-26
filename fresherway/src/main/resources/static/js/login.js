@@ -1,42 +1,71 @@
 async function login() {
 
     const email =
-        document.getElementById("email").value;
+        document.getElementById("email").value.trim();
 
     const password =
-        document.getElementById("password").value;
+        document.getElementById("password").value.trim();
 
-    const response =
-        await fetch(
-            "http://localhost:8086/api/auth/login",
-            {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({
-                    email: email,
-                    password: password
-                })
-            }
-        );
+    const message =
+        document.getElementById("message");
 
-    const data = await response.json();
+    message.innerHTML = "";
 
-    document.getElementById(
-        "message"
-    ).innerText =
-        data.message;
+    if (email === "" || password === "") {
 
-    if (data.token) {
+        message.style.color = "red";
+        message.innerHTML = "Please enter email and password.";
 
-        localStorage.setItem(
-            "token",
-            data.token
-        );
-
-        alert(
-            "Login Successful"
-        );
+        return;
     }
+
+    try {
+
+        const response = await fetch("/api/auth/login", {
+
+            method: "POST",
+
+            headers: {
+                "Content-Type": "application/json"
+            },
+
+            body: JSON.stringify({
+                email: email,
+                password: password
+            })
+
+        });
+
+        const data = await response.json();
+
+        if (response.ok && data.token) {
+
+            localStorage.setItem("token", data.token);
+            localStorage.setItem("email", email);
+
+            message.style.color = "green";
+            message.innerHTML = "Login Successful ✓";
+
+            setTimeout(() => {
+
+                window.location.href = "/jobs.html";
+
+            }, 1000);
+
+        } else {
+
+            message.style.color = "red";
+            message.innerHTML = data.message;
+
+        }
+
+    } catch (error) {
+
+        console.error(error);
+
+        message.style.color = "red";
+        message.innerHTML = "Unable to connect to server.";
+
+    }
+
 }

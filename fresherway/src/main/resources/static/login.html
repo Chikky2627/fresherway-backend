@@ -1,28 +1,189 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <title>FresherWay Login</title>
-    <link rel="stylesheet" href="css/login.css">
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>FresherWay | Login</title>
+
+    <link rel="stylesheet"
+          href="css/login.css">
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
 </head>
+
 <body>
 
 <div class="container">
 
-    <h2>FresherWay Login</h2>
+    <!-- LEFT PANEL -->
 
-    <input type="email" id="email"  class="email"placeholder="Enter Email">
+    <div class="left-panel">
 
-    <input type="password" id="password"  class="password" placeholder="Enter Password">
+        <div class="logo">
 
-    <button onclick="login()">
-        Login
-    </button>
+            <i class="fa-solid fa-briefcase"></i>
 
-    <p id="message"></p>
+            <span>FresherWay</span>
+
+        </div>
+
+        <h1>
+
+            Find Your
+            <br>
+
+            <span>Dream Job</span>
+
+        </h1>
+
+        <p>
+
+            Connecting talented freshers with
+            top companies through one secure platform.
+
+        </p>
+
+        <div class="features">
+
+            <div>
+
+                <i class="fa-solid fa-circle-check"></i>
+
+                Secure Login
+
+            </div>
+
+            <div>
+
+                <i class="fa-solid fa-building"></i>
+
+                Trusted Companies
+
+            </div>
+
+            <div>
+
+                <i class="fa-solid fa-chart-line"></i>
+
+                Track Applications
+
+            </div>
+
+            <div>
+
+                <i class="fa-brands fa-java"></i>
+
+                Spring Boot Powered
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- RIGHT PANEL -->
+
+    <div class="right-panel">
+
+        <div class="top-link">
+
+            New User?
+
+            <a href="register.html">
+
+                Register
+
+            </a>
+
+        </div>
+
+        <h2>
+
+            Welcome Back 👋
+
+        </h2>
+
+        <p class="subtitle">
+
+            Sign in to continue your career journey.
+
+        </p>
+
+        <div class="input-box">
+
+            <i class="fa-solid fa-envelope"></i>
+
+            <input
+                    type="email"
+                    id="email"
+                    placeholder="Email Address">
+
+        </div>
+
+        <div class="input-box">
+
+            <i class="fa-solid fa-lock"></i>
+
+            <input
+                    type="password"
+                    id="password"
+                    placeholder="Password">
+
+        </div>
+
+        <div class="options">
+
+            <label>
+
+                <input type="checkbox">
+
+                Remember Me
+
+            </label>
+
+            <a href="#">
+
+                Forgot Password?
+
+            </a>
+
+        </div>
+
+        <button
+                onclick="login()">
+
+            Login
+
+        </button>
+
+        <p
+           id="message">
+
+        </p>
+
+    </div>
 
 </div>
 
 <script src="js/login.js"></script>
 
 </body>
+
 </html>
