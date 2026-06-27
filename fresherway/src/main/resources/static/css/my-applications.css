@@ -1,0 +1,274 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+
+    background:#f4f7fc;
+
+}
+
+/* ================= NAVBAR ================= */
+
+nav{
+
+    height:70px;
+
+    background:#2563eb;
+
+    color:white;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:0 60px;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
+
+}
+
+.logo{
+
+    font-size:28px;
+
+    font-weight:700;
+
+}
+
+.logo i{
+
+    margin-right:10px;
+
+}
+
+.nav-links{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:25px;
+
+}
+
+.nav-links a{
+
+    color:white;
+
+    text-decoration:none;
+
+    font-size:16px;
+
+    transition:.3s;
+
+}
+
+.nav-links a:hover{
+
+    color:#dbeafe;
+
+}
+
+.active{
+
+    font-weight:600;
+
+    border-bottom:2px solid white;
+
+    padding-bottom:3px;
+
+}
+
+.logout-btn{
+
+    background:#ef4444;
+
+    color:white;
+
+    border:none;
+
+    padding:10px 20px;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.logout-btn:hover{
+
+    background:#dc2626;
+
+}
+
+/* ================= TITLE ================= */
+
+.page-title{
+
+    text-align:center;
+
+    margin:40px 0;
+
+}
+
+.page-title h1{
+
+    color:#1d4ed8;
+
+    margin-bottom:10px;
+
+}
+
+.page-title p{
+
+    color:#555;
+
+    font-size:16px;
+
+}
+
+/* ================= APPLICATION CARDS ================= */
+
+.applications-container{
+
+    width:90%;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
+
+    gap:25px;
+
+    padding-bottom:40px;
+
+}
+
+.application-card{
+
+    background:white;
+
+    border-radius:15px;
+
+    padding:25px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+    transition:.3s;
+
+}
+
+.application-card:hover{
+
+    transform:translateY(-6px);
+
+}
+
+.application-card h2{
+
+    color:#2563eb;
+
+    margin-bottom:15px;
+
+}
+
+.application-card p{
+
+    margin:10px 0;
+
+    color:#555;
+
+    line-height:24px;
+
+}
+
+/* ================= STATUS ================= */
+
+.status{
+
+    display:inline-block;
+
+    margin-top:15px;
+
+    padding:8px 16px;
+
+    border-radius:20px;
+
+    font-size:14px;
+
+    font-weight:600;
+
+}
+
+.applied{
+
+    background:#dbeafe;
+
+    color:#1d4ed8;
+
+}
+
+.interview{
+
+    background:#fef3c7;
+
+    color:#b45309;
+
+}
+
+.selected{
+
+    background:#dcfce7;
+
+    color:#15803d;
+
+}
+
+.rejected{
+
+    background:#fee2e2;
+
+    color:#dc2626;
+
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:768px){
+
+    nav{
+
+        flex-direction:column;
+
+        height:auto;
+
+        padding:20px;
+
+        gap:15px;
+
+    }
+
+    .nav-links{
+
+        flex-direction:column;
+
+        gap:15px;
+
+    }
+
+    .applications-container{
+
+        grid-template-columns:1fr;
+
+    }
+
+}

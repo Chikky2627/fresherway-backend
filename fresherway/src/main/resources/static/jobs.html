@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>FresherWay | Jobs</title>
+
+    <link rel="stylesheet"
+          href="css/jobs.css">
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+
+    <!-- Navbar -->
+
+    <nav>
+
+        <div class="logo">
+
+            <i class="fa-solid fa-briefcase"></i>
+
+            FresherWay
+
+        </div>
+
+        <div class="nav-right">
+
+            <span id="welcomeUser">
+
+                Welcome
+
+            </span>
+
+            <button
+                    class="logout-btn"
+                    onclick="logout()">
+
+                Logout
+
+            </button>
+
+        </div>
+
+    </nav>
+
+    <!-- Search Section -->
+
+    <section class="search-section">
+
+        <h2>
+
+            Find Your Dream Job
+
+        </h2>
+
+        <div class="search-box">
+
+            <input
+                    type="text"
+                    id="skill"
+                    placeholder="Search by Skill">
+
+            <input
+                    type="text"
+                    id="location"
+                    placeholder="Search by Location">
+
+            <button onclick="searchJobs()">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                Search
+
+            </button>
+
+            <button
+                    class="reset-btn"
+                    onclick="loadJobs()">
+
+                Reset
+
+            </button>
+
+        </div>
+
+    </section>
+
+    <!-- Job Cards -->
+
+    <section
+            id="jobsContainer"
+            class="jobs-container">
+
+        <!-- Jobs will be loaded here -->
+
+    </section>
+
+    <script src="js/job.js"></script>
+
+</body>
+
+</html>
