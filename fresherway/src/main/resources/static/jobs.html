@@ -42,23 +42,37 @@
 
         </div>
 
-        <div class="nav-right">
+       <div class="nav-right">
 
-            <span id="welcomeUser">
+    <a href="jobs.html" class="nav-link">
 
-                Welcome
+        Jobs
 
-            </span>
+    </a>
 
-            <button
-                    class="logout-btn"
-                    onclick="logout()">
+    <a href="my-applications.html" class="nav-link">
 
-                Logout
+        My Applications
 
-            </button>
+    </a>
 
-        </div>
+    <span id="welcomeUser">
+
+        Welcome
+
+    </span>
+
+    <button
+            class="logout-btn"
+            onclick="logout()">
+
+        Logout
+
+    </button>
+
+</div>
+
+       
 
     </nav>
 
@@ -74,15 +88,8 @@
 
         <div class="search-box">
 
-            <input
-                    type="text"
-                    id="skill"
-                    placeholder="Search by Skill">
-
-            <input
-                    type="text"
-                    id="location"
-                    placeholder="Search by Location">
+            <input type="text" id="skill" placeholder="Search by Skill">
+            <input type="text" id="location" placeholder="Search by Location">
 
             <button onclick="searchJobs()">
 

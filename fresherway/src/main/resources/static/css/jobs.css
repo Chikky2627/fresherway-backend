@@ -56,6 +56,33 @@ nav{
     gap:20px;
 
 }
+.nav-link{
+
+    color:white;
+
+    text-decoration:none;
+
+    font-size:16px;
+
+    font-weight:500;
+
+    transition:.3s;
+
+}
+
+.nav-link:hover{
+
+    color:#dbeafe;
+
+}
+
+.nav-link.active{
+
+    border-bottom:2px solid white;
+
+    padding-bottom:4px;
+
+}
 
 #welcomeUser{
 

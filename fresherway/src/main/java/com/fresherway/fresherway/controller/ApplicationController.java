@@ -28,7 +28,7 @@ public class ApplicationController {
         return applicationService.applyJob(request);
     }
 
-    @GetMapping("/{userId}")
+    @GetMapping("/user/{userId}")
     public List<JobApplication> getApplications(
             @PathVariable Long userId) {
 
