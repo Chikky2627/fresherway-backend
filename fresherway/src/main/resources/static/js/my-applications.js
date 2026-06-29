@@ -14,8 +14,8 @@ async function loadApplications() {
     // Later replace with:
     // const userId = localStorage.getItem("userId");
 
-    const userId = 1;
-
+    const userId =12;
+    
     try {
 
         const response =

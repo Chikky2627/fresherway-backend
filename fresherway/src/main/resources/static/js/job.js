@@ -144,7 +144,8 @@ async function searchJobs() {
 
 async function applyJob(jobId) {
 
-    const userId = 1;
+    const userId =
+    localStorage.getItem("userId");
 
     try {
 

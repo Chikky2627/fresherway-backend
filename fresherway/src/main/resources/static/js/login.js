@@ -42,6 +42,7 @@ async function login() {
 
             localStorage.setItem("token", data.token);
             localStorage.setItem("email", email);
+           
 
             message.style.color = "green";
             message.innerHTML = "Login Successful ✓";

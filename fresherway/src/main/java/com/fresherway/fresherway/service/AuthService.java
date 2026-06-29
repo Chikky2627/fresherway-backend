@@ -130,15 +130,10 @@ public Map<String,String> login(LoginRequest request){
         return response;
     }
 
-    String token =
-        jwtService.generateToken(
-                user.getEmail(),user.getRole());
+    String token =jwtService.generateToken( user.getEmail(),user.getRole());
 
-response.put("message",
-        "Login Successful");
-
-response.put("token",
-        token);
+response.put("userId", user.getId().toString());
+response.put("role", user.getRole());
 
     return response;
 }

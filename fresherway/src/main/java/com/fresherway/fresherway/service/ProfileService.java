@@ -38,8 +38,9 @@ public class ProfileService {
                 .orElse(null);
     }
 
-    public String updateProfile(Long userId,
-                                ProfileRequest request) {
+    public String updateProfile(
+            Long userId,
+            ProfileRequest request) {
 
         StudentProfile profile = profileRepository
                 .findByUserId(userId)

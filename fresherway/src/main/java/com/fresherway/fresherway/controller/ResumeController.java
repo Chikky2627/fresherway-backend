@@ -1,7 +1,9 @@
 package com.fresherway.fresherway.controller;
 
 import java.io.IOException;
-import java.nio.file.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -17,18 +19,13 @@ public class ResumeController {
 
         String uploadDir = "uploads/";
 
-        Files.createDirectories(
-                Paths.get(uploadDir));
+        Files.createDirectories(Paths.get(uploadDir));
 
-        String fileName =
-                file.getOriginalFilename();
+        String fileName = file.getOriginalFilename();
 
-        Path filePath =
-                Paths.get(uploadDir + fileName);
+        Path filePath = Paths.get(uploadDir, fileName);
 
-        Files.write(
-                filePath,
-                file.getBytes());
+        Files.write(filePath, file.getBytes());
 
         return "Resume Uploaded Successfully";
     }

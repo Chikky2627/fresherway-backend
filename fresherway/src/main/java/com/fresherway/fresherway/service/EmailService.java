@@ -23,7 +23,7 @@ public class EmailService {
 
         message.setText(
             "Click the link below to verify your account:\n\n" +
-            "http://localhost:8084/api/auth/verify?token=" + token
+            "http://localhost:8086/api/auth/verify?token=" + token
         );
 
         mailSender.send(message);

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>FresherWay | Student Profile</title>
+
+    <link rel="stylesheet"
+          href="css/profile.css">
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+</head>
+
+<body>
+
+<nav>
+
+    <h2>FresherWay</h2>
+
+    <button onclick="logout()">
+
+        Logout
+
+    </button>
+
+</nav>
+
+<div class="container">
+
+    <h1>
+
+        Student Profile
+
+    </h1>
+
+    <input
+            type="text"
+            id="college"
+            placeholder="College">
+
+    <input
+            type="text"
+            id="branch"
+            placeholder="Branch">
+
+    <input
+            type="number"
+            id="cgpa"
+            placeholder="CGPA">
+
+    <input
+            type="text"
+            id="skills"
+            placeholder="Skills">
+
+    <button
+            onclick="saveProfile()">
+
+        Save Profile
+
+    </button>
+
+    <hr>
+
+    <h2>
+
+        Upload Resume
+
+    </h2>
+
+    <input
+            type="file"
+            id="resumeFile"
+            accept=".pdf,.doc,.docx">
+
+    <button
+            onclick="uploadResume()">
+
+        Upload Resume
+
+    </button>
+
+    <p id="message"></p>
+   
+
+</div>
+
+<script src="js/profile.js"></script>
+
+</body>
+
+</html>
