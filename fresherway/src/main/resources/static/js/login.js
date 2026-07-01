@@ -42,17 +42,29 @@ async function login() {
 
             localStorage.setItem("token", data.token);
             localStorage.setItem("email", email);
-           
+            localStorage.setItem("userId", data.userId);
+localStorage.setItem("role", data.role);
 
             message.style.color = "green";
             message.innerHTML = "Login Successful ✓";
 
-            setTimeout(() => {
+           setTimeout(() => {
 
-                window.location.href = "/jobs.html";
+    if (data.role === "COMPANY") {
 
-            }, 1000);
+        window.location.href = "/company-dashboard.html";
 
+    } else if (data.role === "ADMIN") {
+
+        window.location.href = "/admin-dashboard.html";
+
+    } else {
+
+        window.location.href = "/jobs.html";
+
+    }
+
+}, 1000);
         } else {
 
             message.style.color = "red";

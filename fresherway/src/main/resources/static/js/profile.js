@@ -20,6 +20,8 @@ async function loadProfile() {
 
         const response =
             await fetch("/api/profile/" + userId);
+            console.log("UserId:", userId);
+console.log("Status:", response.status);
 
         if (!response.ok) {
 
@@ -73,9 +75,9 @@ async function saveProfile() {
             document.getElementById("skills").value,
 
         resumeUrl: ""
-
+        
     };
-
+     console.log(profile);
     try {
 
         let response =

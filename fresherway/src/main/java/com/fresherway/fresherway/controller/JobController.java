@@ -78,4 +78,17 @@ public List<Job> searchJobs(
 
     return jobService.getAllJobs();
 }
+@GetMapping("/fake")
+public List<Job> getFakeJobs() {
+
+    return jobService.getFakeJobs();
+
+}
+@DeleteMapping("/{id}")
+public String deleteJob(
+        @PathVariable Long id){
+
+    return jobService.deleteJob(id);
+
+}
 }

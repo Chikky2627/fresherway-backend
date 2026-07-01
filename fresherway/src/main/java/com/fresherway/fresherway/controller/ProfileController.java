@@ -1,5 +1,6 @@
 package com.fresherway.fresherway.controller;
 
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import com.fresherway.fresherway.dto.ProfileRequest;
@@ -20,17 +21,26 @@ public class ProfileController {
     public String createProfile(@RequestBody ProfileRequest request) {
         return profileService.createProfile(request);
     }
-
     @GetMapping("/{userId}")
-    public StudentProfile getProfile(@PathVariable Long userId) {
-        return profileService.getProfile(userId);
+public ResponseEntity<StudentProfile> getProfile(
+        @PathVariable Long userId) {
+
+    StudentProfile profile = profileService.getProfile(userId);
+
+    if (profile == null) {
+        return ResponseEntity.notFound().build();
     }
 
+    return ResponseEntity.ok(profile);
+}
+    
+
     @PutMapping("/{userId}")
-    public String updateProfile(
+    public ResponseEntity<String> updateProfile(
             @PathVariable Long userId,
             @RequestBody ProfileRequest request) {
 
-        return profileService.updateProfile(userId, request);
+        String result = profileService.updateProfile(userId, request);
+        return ResponseEntity.ok(result);
     }
 }

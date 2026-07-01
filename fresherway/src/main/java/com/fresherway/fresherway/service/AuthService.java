@@ -105,39 +105,42 @@ public String verifyAccount(String token) {
 
     return "Account Verified Successfully";
 }
-public Map<String,String> login(LoginRequest request){
+public Map<String, String> login(LoginRequest request) {
 
-    Map<String,String> response = new HashMap<>();
+    Map<String, String> response = new HashMap<>();
 
     User user = userRepository
             .findByEmail(request.getEmail())
             .orElse(null);
 
-    if(user == null){
-        response.put("message","User Not Found");
+    if (user == null) {
+        response.put("message", "User Not Found");
         return response;
     }
 
-    if(Boolean.FALSE.equals(user.getVerified())){
-        response.put("message","Please verify your email first");
+    if (Boolean.FALSE.equals(user.getVerified())) {
+        response.put("message", "Please verify your email first");
         return response;
     }
 
-    if(!passwordEncoder.matches(
+    if (!passwordEncoder.matches(
             request.getPassword(),
-            user.getPassword())){
-        response.put("message","Invalid Password");
+            user.getPassword())) {
+
+        response.put("message", "Invalid Password");
         return response;
     }
 
-    String token =jwtService.generateToken( user.getEmail(),user.getRole());
+    String token =
+            jwtService.generateToken(
+                    user.getEmail(),
+                    user.getRole());
 
-response.put("userId", user.getId().toString());
-response.put("role", user.getRole());
+    response.put("message", "Login Successful");
+    response.put("token", token);
+    response.put("userId", user.getId().toString());
+    response.put("role", user.getRole());
 
     return response;
 }
-
-	}
-
-
+    }

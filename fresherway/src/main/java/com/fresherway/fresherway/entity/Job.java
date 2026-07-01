@@ -1,10 +1,13 @@
 package com.fresherway.fresherway.entity;
 
+import java.time.LocalDate;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+
 
 @Entity
 public class Job {
@@ -21,6 +24,56 @@ public class Job {
     private Double salary;
 
     private String skillsRequired;
+    private Boolean fakeJob;
+
+@Column(length = 500)
+private String fakeReason;
+
+private Boolean active;
+
+public Boolean getFakeJob() {
+    return fakeJob;
+}
+
+public void setFakeJob(Boolean fakeJob) {
+    this.fakeJob = fakeJob;
+}
+
+public String getFakeReason() {
+    return fakeReason;
+}
+
+public void setFakeReason(String fakeReason) {
+    this.fakeReason = fakeReason;
+}
+
+public Boolean getActive() {
+    return active;
+}
+
+public void setActive(Boolean active) {
+    this.active = active;
+}
+
+public LocalDate getPostedDate() {
+    return postedDate;
+}
+
+public void setPostedDate(LocalDate postedDate) {
+    this.postedDate = postedDate;
+}
+
+public LocalDate getExpiryDate() {
+    return expiryDate;
+}
+
+public void setExpiryDate(LocalDate expiryDate) {
+    this.expiryDate = expiryDate;
+}
+
+private LocalDate postedDate;
+
+private LocalDate expiryDate;
 
     @Column(length = 1000)
     private String description;
