@@ -26,10 +26,10 @@ import jakarta.validation.Valid;
 
 	        return authService.register(request);
 	    }
-		@GetMapping("/verify")
-          public String verify(@RequestParam String token) {
-          return authService.verifyAccount(token);
-        }
+		//@GetMapping("/verify")
+         // public String verify(@RequestParam String token) {
+          //return authService.verifyAccount(token);
+      //  }
         @PostMapping("/login")
           public Map<String,String> login(
         @RequestBody LoginRequest request){

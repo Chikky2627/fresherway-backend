@@ -10,9 +10,10 @@ public class EmailService {
 
     private final JavaMailSender mailSender;
 
-    EmailService(JavaMailSender mailSender) {
+    public EmailService(JavaMailSender mailSender) {
         this.mailSender = mailSender;
     }
+
 
     public void sendVerificationEmail(String email, String token) {
 

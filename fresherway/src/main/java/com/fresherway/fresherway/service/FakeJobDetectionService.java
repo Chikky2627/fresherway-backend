@@ -106,7 +106,7 @@ public class FakeJobDetectionService {
 
         job.setPostedDate(LocalDate.now());
 
-       job.setExpiryDate(LocalDate.now());
+       job.setExpiryDate(LocalDate.now().plusWeeks(2));
     }
 
 }
